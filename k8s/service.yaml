@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: basicphp-service
+  labels:
+    app: basicphp
+spec:
+  selector:
+    app: basicphp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort    # use LoadBalancer in cloud; NodePort is fine for minikube / bare-metal
